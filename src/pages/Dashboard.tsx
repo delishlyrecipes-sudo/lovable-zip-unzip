@@ -1,27 +1,11 @@
-import { Helmet } from "react-helmet-async";
+import { useSeo } from "@/hooks/useSeo";
 
 const Dashboard = () => {
+  const { SeoHelmet } = useSeo("dashboard");
+  
   return (
     <>
-      <Helmet>
-        <title>Dashboard - convertingpdf PDF Tools</title>
-        <meta
-          name="description"
-          content="Access your convertingpdf dashboard. Manage your PDF documents, view processing history, and access all PDF tools in one place."
-        />
-        <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://convertingpdf.lovable.app/dashboard" />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "convertingpdf Dashboard",
-            "description": "User dashboard for managing PDF documents and accessing tools"
-          })}
-        </script>
-      </Helmet>
+      <SeoHelmet />
       
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-16">
