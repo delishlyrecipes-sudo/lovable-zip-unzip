@@ -1,9 +1,10 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
+import { useSeo } from "@/hooks/useSeo";
 
 const NotFound = () => {
   const location = useLocation();
+  const { SeoHelmet } = useSeo("notFound");
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
@@ -11,15 +12,7 @@ const NotFound = () => {
 
   return (
     <>
-      <Helmet>
-        <title>404 - Page Not Found | convertingpdf</title>
-        <meta
-          name="description"
-          content="The page you're looking for doesn't exist. Return to convertingpdf to access our PDF processing tools."
-        />
-        <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://convertingpdf.lovable.app" />
-      </Helmet>
+      <SeoHelmet />
       
       <div className="flex min-h-screen items-center justify-center bg-muted">
         <div className="text-center">

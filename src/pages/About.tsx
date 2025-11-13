@@ -1,53 +1,11 @@
-import { Helmet } from "react-helmet-async";
+import { useSeo } from "@/hooks/useSeo";
 
 const About = () => {
+  const { SeoHelmet } = useSeo("about");
+  
   return (
     <>
-      <Helmet>
-        <title>About convertingpdf - Professional PDF Processing Platform</title>
-        <meta
-          name="description"
-          content="Learn about convertingpdf, the professional PDF processing platform trusted by users worldwide. Discover our mission to simplify document management."
-        />
-        <meta
-          name="keywords"
-          content="about convertingpdf, PDF platform, document management, PDF tools company"
-        />
-        <link rel="canonical" href="https://convertingpdf.lovable.app/about" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="About convertingpdf - Our Story & Mission" />
-        <meta
-          property="og:description"
-          content="Learn about convertingpdf and our mission to provide professional PDF tools for everyone."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://convertingpdf.lovable.app/about" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About convertingpdf" />
-        <meta
-          name="twitter:description"
-          content="Discover the story behind convertingpdf and our commitment to excellent PDF tools."
-        />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "AboutPage",
-            "name": "About convertingpdf",
-            "description": "Learn about convertingpdf, the professional PDF processing platform",
-            "mainEntity": {
-              "@type": "Organization",
-              "name": "convertingpdf",
-              "description": "Professional PDF processing tools for everyone",
-              "url": "https://convertingpdf.lovable.app"
-            }
-          })}
-        </script>
-      </Helmet>
+      <SeoHelmet />
       
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-16">
